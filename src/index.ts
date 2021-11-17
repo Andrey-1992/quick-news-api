@@ -1,1 +1,2 @@
-console.log('probando type script')
+import express from 'express';
+const app = express();
