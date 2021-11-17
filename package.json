@@ -19,5 +19,9 @@
   "homepage": "https://github.com/Andrey-1992/quick-news-api#readme",
   "devDependencies": {
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
   }
 }
