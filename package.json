@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon dist/index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/Andrey-1992/quick-news-api#readme",
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "typescript": "^4.4.4"
   },
   "dependencies": {
