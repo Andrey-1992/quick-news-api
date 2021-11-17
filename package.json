@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Andrey-1992/quick-news-api/issues"
   },
-  "homepage": "https://github.com/Andrey-1992/quick-news-api#readme"
+  "homepage": "https://github.com/Andrey-1992/quick-news-api#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
 }
