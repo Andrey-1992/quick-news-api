@@ -1,0 +1,20 @@
+{
+  "name": "quick-news-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrey-1992/quick-news-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrey-1992/quick-news-api/issues"
+  },
+  "homepage": "https://github.com/Andrey-1992/quick-news-api#readme"
+}
