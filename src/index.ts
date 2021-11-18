@@ -3,6 +3,7 @@ const app = express();
 
 import indexRoute from './routes/index'
 
+app.use(indexRoute)
 
 app.listen(4000, () => {
   console.log("Server running on port 4000")
