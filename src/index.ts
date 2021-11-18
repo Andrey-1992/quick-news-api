@@ -3,6 +3,7 @@ const app = express();
 
 import indexRoute from './routes/index'
 
+app.use(express.json());
 app.use(indexRoute)
 
 app.listen(4000, () => {
