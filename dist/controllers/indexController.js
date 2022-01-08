@@ -12,8 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSavedNews = void 0;
 const databasePool_1 = require("../databasePool");
 const getSavedNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // res.send('test saved news from controllers file')
-    const response = yield databasePool_1.pool.query('SELECT * FROM savednews');
-    return res.status(200).json(response.rows);
+    try {
+        const response = yield databasePool_1.pool.query('SELECT * FROM savednews');
+        return res.status(200).json(response.rows);
+    }
+    catch (e) {
+        console.log(e);
+        return res.status(500).json('Internal Server Error');
+    }
 });
 exports.getSavedNews = getSavedNews;
