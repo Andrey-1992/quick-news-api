@@ -30,7 +30,7 @@ export const storeNews = async (req: Request, res: Response): Promise<Response> 
     //   multimediacaption,
     //   urlink,
     //   section);
-    pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
+  const response: QueryResult = await pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
   return res.send('recived')
   // try {
   //   const response: QueryResult = await pool.query('SELECT * FROM savednews');

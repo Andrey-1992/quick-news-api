@@ -32,7 +32,7 @@ const storeNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     //   multimediacaption,
     //   urlink,
     //   section);
-    databasePool_1.pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
+    const response = yield databasePool_1.pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
     return res.send('recived');
     // try {
     //   const response: QueryResult = await pool.query('SELECT * FROM savednews');
