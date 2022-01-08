@@ -26,7 +26,18 @@ const storeNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { abstract, byline, title, multimediaurl, multimediacaption, urlink, section } = req.body;
         const response = yield databasePool_1.pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
-        return res.send('recived');
+        return res.status(200).json({
+            message: 'This News have been store successfully!',
+            body: {
+                abstract,
+                byline,
+                title,
+                multimediaurl,
+                multimediacaption,
+                urlink,
+                section
+            }
+        });
     }
     catch (e) {
         console.log(e);
