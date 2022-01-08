@@ -43,16 +43,17 @@ export const storeNews = async (req: Request, res: Response): Promise<Response> 
   } 
 }
 
-// export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
-//   try {
-//     const response: QueryResult = await pool.query('SELECT * FROM savednews');
-//     return res.status(200).json(response.rows);
-//   } 
-//   catch(e) {
-//     console.log(e);
-//     return res.status(500).json('Internal Server Error')
-//   } 
-// }
+export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
+
+  try {
+    const id = parseInt(req.params.id)
+    return res.send('Deleting News')
+  } 
+  catch(e) {
+    console.log(e);
+    return res.status(500).json('Internal Server Error')
+  } 
+}
 
 
 // {

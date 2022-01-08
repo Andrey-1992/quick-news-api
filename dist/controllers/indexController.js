@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.storeNews = exports.getSavedNews = void 0;
+exports.deleteNews = exports.storeNews = exports.getSavedNews = void 0;
 const databasePool_1 = require("../databasePool");
 const getSavedNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -45,16 +45,17 @@ const storeNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.storeNews = storeNews;
-// export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
-//   try {
-//     const response: QueryResult = await pool.query('SELECT * FROM savednews');
-//     return res.status(200).json(response.rows);
-//   } 
-//   catch(e) {
-//     console.log(e);
-//     return res.status(500).json('Internal Server Error')
-//   } 
-// }
+const deleteNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = parseInt(req.params.id);
+        return res.send('Deleting News');
+    }
+    catch (e) {
+        console.log(e);
+        return res.status(500).json('Internal Server Error');
+    }
+});
+exports.deleteNews = deleteNews;
 // {
 //   "abstract": "Some activists called the agreement in Glasgow disappointing, but it established a clear consensus that all countries need to do much more.",
 //   "byline": "By Brad Plumer and Lisa Friedman",
