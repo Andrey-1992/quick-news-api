@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express(); 
 
-import indexRoute from './routes/index'
+import indexRoute from './routes/indexRoutes'
 
 app.use(express.json());
 app.use(indexRoute)
