@@ -10,5 +10,4 @@ app.use(express_1.default.json());
 app.use(indexRoutes_1.default);
 app.listen(3000, () => {
     console.log("Server running on port 3000");
-    console.log('test');
 });
