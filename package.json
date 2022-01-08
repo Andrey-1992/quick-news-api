@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"" ,
+    "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Andrey-1992/quick-news-api#readme",
   "devDependencies": {
+    "@types/pg": "^8.6.3",
     "concurrently": "^6.4.0",
     "nodemon": "^2.0.15",
     "typescript": "^4.4.4"
