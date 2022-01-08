@@ -13,7 +13,7 @@ exports.getSavedNews = void 0;
 const databasePool_1 = require("../databasePool");
 const getSavedNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // res.send('test saved news from controllers file')
-    const response = yield databasePool_1.pool.query('SELECT * FROM quicknew');
-    console.log(response.rows);
+    const response = yield databasePool_1.pool.query('SELECT * FROM savednews');
+    res.status(200).json(response.rows);
 });
 exports.getSavedNews = getSavedNews;
