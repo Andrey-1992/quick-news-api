@@ -44,10 +44,10 @@ export const storeNews = async (req: Request, res: Response): Promise<Response> 
 }
 
 export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
-
   try {
     const id = parseInt(req.params.id)
-    return res.send('Deleting News')
+    const response: QueryResult = await pool.query('DELETE FROM savednews WHERE id = $1', [id])
+    return res.status(200).json(`News Successfully deleted with ID: ${id}`);
   } 
   catch(e) {
     console.log(e);

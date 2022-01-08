@@ -48,7 +48,8 @@ exports.storeNews = storeNews;
 const deleteNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = parseInt(req.params.id);
-        return res.send('Deleting News');
+        const response = yield databasePool_1.pool.query('DELETE FROM savednews WHERE id = $1', [id]);
+        return res.status(200).json(`News Successfully deleted with ID: ${id}`);
     }
     catch (e) {
         console.log(e);
