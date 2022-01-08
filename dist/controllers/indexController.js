@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSavedNews = void 0;
+exports.storeNews = exports.getSavedNews = void 0;
 const databasePool_1 = require("../databasePool");
 const getSavedNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -22,3 +22,26 @@ const getSavedNews = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.getSavedNews = getSavedNews;
+const storeNews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(req.body);
+    return res.send('recived');
+    // try {
+    //   const response: QueryResult = await pool.query('SELECT * FROM savednews');
+    //   return res.status(200).json(response.rows);
+    // } 
+    // catch(e) {
+    //   console.log(e);
+    //   return res.status(500).json('Internal Server Error')
+    // } 
+});
+exports.storeNews = storeNews;
+// export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
+//   try {
+//     const response: QueryResult = await pool.query('SELECT * FROM savednews');
+//     return res.status(200).json(response.rows);
+//   } 
+//   catch(e) {
+//     console.log(e);
+//     return res.status(500).json('Internal Server Error')
+//   } 
+// }
