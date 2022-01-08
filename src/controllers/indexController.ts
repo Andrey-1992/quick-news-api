@@ -14,32 +14,22 @@ export const getSavedNews = async (req: Request, res: Response): Promise<Respons
 }
 
 export const storeNews = async (req: Request, res: Response): Promise<Response> => {
-  // console.log(req.body)
-  const { 
-    abstract,
-    byline,
-    title,
-    multimediaurl,
-    multimediacaption,
-    urlink,
-    section } = req.body;
-    // console.log(abstract,
-    //   byline,
-    //   title,
-    //   multimediaurl,
-    //   multimediacaption,
-    //   urlink,
-    //   section);
-  const response: QueryResult = await pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
-  return res.send('recived')
-  // try {
-  //   const response: QueryResult = await pool.query('SELECT * FROM savednews');
-  //   return res.status(200).json(response.rows);
-  // } 
-  // catch(e) {
-  //   console.log(e);
-  //   return res.status(500).json('Internal Server Error')
-  // } 
+  try {
+    const { 
+      abstract,
+      byline,
+      title,
+      multimediaurl,
+      multimediacaption,
+      urlink,
+      section } = req.body;
+    const response: QueryResult = await pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
+    return res.send('recived')
+  } 
+  catch(e) {
+    console.log(e);
+    return res.status(500).json('Internal Server Error')
+  } 
 }
 
 // export const deleteNews = async (req: Request, res: Response): Promise<Response> => {
