@@ -14,7 +14,22 @@ export const getSavedNews = async (req: Request, res: Response): Promise<Respons
 }
 
 export const storeNews = async (req: Request, res: Response): Promise<Response> => {
-  console.log(req.body)
+  // console.log(req.body)
+  const { 
+    abstract,
+    byline,
+    title,
+    multimediaurl,
+    multimediacaption,
+    urlink,
+    section } = req.body;
+    console.log(abstract,
+      byline,
+      title,
+      multimediaurl,
+      multimediacaption,
+      urlink,
+      section);
   return res.send('recived')
   // try {
   //   const response: QueryResult = await pool.query('SELECT * FROM savednews');
