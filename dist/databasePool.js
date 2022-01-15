@@ -4,6 +4,7 @@ exports.pool = void 0;
 const pg_1 = require("pg");
 require('dotenv').config();
 const isProduction = process.env.NODE_ENV === 'production';
+const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
 exports.pool = new pg_1.Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
