@@ -1,11 +1,11 @@
 import { Pool} from 'pg';
 require('dotenv').config();
-console.log(process.env.DB_USER)
+console.log(process.env.DB_PASSWORD)
 
 export const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  password: 'Turing21.',
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
   port: 5432,
-  database: 'quicknew'
+  database: process.env.DB_DATABASE
 })
