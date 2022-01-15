@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
     res.status(200).send(`You've reached the ${app.locals.title} API `);
 });
 app.listen(3000, () => {
-    console.log(`${app.locals.title} is running on ${app.get('port')} port`);
+    console.log(`${app.locals.title} is running on port: ${app.get('port')}`);
 });
