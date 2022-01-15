@@ -23,7 +23,9 @@ export const storeNews = async (req: Request, res: Response): Promise<Response> 
       multimediacaption,
       urlink,
       section } = req.body;
-    const response: QueryResult = await pool.query('INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
+    const response: QueryResult = await pool.query(
+      'INSERT INTO savednews (abstract, byline, title, multimediaurl, multimediacaption, urlink, section) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
+      [abstract, byline, title, multimediaurl, multimediacaption, urlink, section]);
     return res.status(200).json({
       message: 'This News have been store successfully!',
       body: {
