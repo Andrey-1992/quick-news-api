@@ -4,8 +4,8 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 
-app.locals.title = 'Strange prompts'
-app.set('port', process.env.PORT || 3001);
+app.locals.title = 'Quick News Server'
+app.set('port', process.env.PORT || 3000);
 
 app.use(express.json());
 app.use(indexRoutes);
@@ -15,5 +15,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log(`Server is listening on ${}`)
+  console.log(`${app.locals.title} is running on ${app.get('port')} port`)
 });
