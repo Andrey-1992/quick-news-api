@@ -1,5 +1,7 @@
 import express from 'express';
 const app = express(); 
+// const cors = require('cors');
+import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes'
 
