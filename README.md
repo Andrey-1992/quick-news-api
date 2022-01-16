@@ -58,15 +58,7 @@ Run ```npm i cors dotenv express pg``` Go to ```config.js``` and comment lines 1
   |             Endpoint              |              Use             |   Method   |  Required Properties for Request |
   |-----------------------------------|:----------------------------:|:----------:|:--------------------------------:|
   |       `/saved-news`           |      get all saved News         |    GET     |               none               |
-  |       `/saved-news`         | post a new article |    POST    | `{
-        abstract,
-        byline,
-        title,
-        multimediaurl,
-        multimediacaption,
-        urlink,
-        section 
-      }` |
+  |       `/saved-news`         | post a new article |    POST    | `{ abstract: "", byline: "", title: "", multimediaurl: "", multimediacaption: "", urlink: "", section: "" }`|
   |       `/saved-news/:id`                         | delete a selected News from Database |    DELETE  | `{"id": interger}`               |
 
 
