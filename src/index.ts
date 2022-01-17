@@ -9,6 +9,7 @@ app.locals.title = 'Quick News Server'
 const port: any = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors())
 app.use(indexRoutes);
 
 app.get('/', (req, res) => {
