@@ -6,7 +6,7 @@ import indexRoutes from './routes/indexRoutes';
 
 app.locals.title = 'Quick News Server'
 // app.set('port', process.env.DB_PORT || 3000);
-const port: any = process.env.PORT || 3000;
+const port: any = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors())
