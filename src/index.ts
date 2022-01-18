@@ -1,10 +1,8 @@
 import express from 'express';
-// import * as cors from 'cors';
-const app = express(); 
-
-var cors = require('cors');
-
 import indexRoutes from './routes/indexRoutes';
+
+const app = express(); 
+const cors = require('cors');
 
 app.locals.title = 'Quick News Server'
 const port: any = process.env.PORT || 4000;
@@ -18,5 +16,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, "0.0.0.0", () => {
-  console.log(`${app.locals.title} is running on port: ${app.get('port')}`)
+  console.log(`${app.locals.title} is running on port: ${port}`)
 });
